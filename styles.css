@@ -1,0 +1,139 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3f8;
+    color: #1e2a38;
+}
+
+/* HEADER */
+header {
+    background: #2e86c1;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* SECCIONES */
+.seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.seccion .texto {
+    flex: 1;
+}
+
+.seccion .texto h2 {
+    color: #2e86c1;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.seccion .texto p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.seccion .imagen {
+    flex: 1;
+}
+
+.seccion .imagen img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+
+.seccion .imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* BOTÓN ARRIBA */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2e86c1;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+    .seccion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .seccion .imagen, .seccion .texto {
+        width: 100%;
+    }
+
+    .seccion .imagen {
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 480px){
+    header {
+        font-size: 22px;
+    }
+
+    .seccion {
+        padding: 20px;
+    }
+
+    .seccion .texto p {
+        font-size: 16px;
+    }
+}
+
+/* HEADER con imagen de fondo */
+header {
+    background-image: url('WhatsApp Image 2025-11-25 at 10.29.39 PM.jpeg');
+    background-size: cover;      /* Ajusta la imagen al tamaño del header */
+    background-position: center; /* Centra la imagen */
+    padding: 100px 25px;         /* Aumenta altura para el efecto visual */
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Opcional: añadir overlay oscuro para mejorar la legibilidad del texto */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4); /* Oscurece la imagen para que el texto resalte */
+    z-index: 0;
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;  /* Asegura que el texto quede sobre la imagen */
+    font-size: 48px;
+    margin: 0;
+}
+
+
